@@ -28,10 +28,10 @@ Book.prototype.fetchBooks = callback => {
   $.ajax ({ 
      url:`${__API_URL__}/api/v1/books`,
      method: 'GET',
-     error: errorView.errorCallback,
+     //error: errorView.errorCallback,
   })
   .then(data => {
-     Books.loadBooks(data);
+     Book.prototype.loadBooks(data);
   })
   .then(callback);
 }
