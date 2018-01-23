@@ -1,5 +1,7 @@
 'use strict';
 
+var bookView = {};
+
 bookView.initAddBook = () => {
   $('#add-book').on('submit', e => {
     e.preventDefault();
