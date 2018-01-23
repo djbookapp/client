@@ -15,8 +15,10 @@ var numbook = function(){
   return this.books.length;
 }
 
-Book.prototype.toHtml = () => {
-  return Handlebars.compile($('#book-list-template').text()); 
+Book.prototype.toHtml = function() {
+  var template = Handlebars.compile($('#book-list-template').text()); 
+  
+  return template(this);
 }
 
 Book.prototype.loadBooks = rows => {
