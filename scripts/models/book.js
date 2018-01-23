@@ -1,5 +1,6 @@
 'use strict';
-const __API_URL__ = 'https://djbookapp.herokuapp.com';
+//const __API_URL__ = 'https://djbookapp.herokuapp.com';
+const __API_URL__ = 'http://localhost:3000';
 
 //this is test data
 //var $content = $('.content');
@@ -9,14 +10,14 @@ const __API_URL__ = 'https://djbookapp.herokuapp.com';
 //});
 
 Book.books = [];
-function Book(author, title, isbn, img-url, description) {
+function Book(author, title, isbn, imgUrl, description) {
   this.author = author;
   this.title = title;
   this.isbn = isbn;
-  this.img-url = img-url;
+  this.imgUrl = imgUrl;
   this.description = description;
 }
 
-Book.prototype.addBook = () => {
-  $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, img-url: this.img-url, description: this.description});
+Book.prototype.addBook = function() {
+  $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description});
 }
