@@ -9,14 +9,37 @@ const __API_URL__ = 'https://djbookapp.herokuapp.com';
 //});
 
 Book.books = [];
-function Book(author, title, isbn, img-url, description) {
-  this.author = author;
-  this.title = title;
-  this.isbn = isbn;
-  this.img-url = img-url;
-  this.description = description;
+function Book(bookObj) {
+  Object.keys(bookObj).forEach(key => this[key] = bookObj[key]);
 }
 
 Book.prototype.addBook = () => {
   $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, img-url: this.img-url, description: this.description});
 }
+
+var numbook = function(){
+  return this.books.length;
+}
+console.log(numbook);
+
+Book.prototype.toHtml() = function() {
+  return Handlebars.compile($('#book-list-template').text()); 
+}
+
+Book.prototype.loadBooks(rows) = function() {
+  rows.sort((a,b) => a.title - b.title); 
+  Book.books = rows.map(book => new Book(book));
+}
+
+
+  /* OLD forEach():
+  rawData.forEach(articleObject => Article.all.push(new Article(articleObject)));
+  */
+
+Book.prototype.fetchBooks = callback => {
+  $.get('request to API')
+  .then(results => {
+    Books.loadBooks(results);
+    callback();
+  })
+};
