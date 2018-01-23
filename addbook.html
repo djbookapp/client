@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>djbookapp</title>
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+  </head>
+  <body>
+    <main class=content>
+      <form id="add-book">
+        <fieldset>
+          <label for="author">Author:</label>
+          <input id="author" type="text">
+        </fieldset>
+        <fieldset>
+          <label for="title">Title:</label>
+          <input id="title" type="text">
+        </fieldset>
+        <fieldset>
+          <label for="isbn">ISBN:</label>
+          <input id="isbn" type="text">
+        </fieldset>
+        <fieldset>
+          <label for="img-url">Image URL:</label>
+          <input id="img-url" type="text">
+        </fieldset>
+        <fieldset>
+          <label for="description">Description:</label>
+          <textarea id="description"></textarea>
+        </fieldset>
+        <button type="submit">Add Book</button>
+      </form>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="scripts/models/book.js"></script>
+  </body>
+</html>
