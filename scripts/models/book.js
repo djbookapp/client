@@ -18,6 +18,6 @@ function Book(author, title, isbn, imgUrl, description) {
   this.description = description;
 }
 
-Book.prototype.addBook = () => {
+Book.prototype.addBook = function() {
   $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description});
 }
