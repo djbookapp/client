@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <script id="book-list-template" type="text/x-handlebars-template">
+      <p>{{title}}</p>
+      <p>{{author}}</p>
+      <p>{{isbn}}</p>
+      <p>{{description}}</p>
+      <img src="{{imgUrl}}"/> 
+    </script>
+
   </head>
   <body>
     <main>
       
-      <section class="books">
+      <section class="booklist">
         <p>Number of books</p>
         <p>List of books and authors</p>
       </script>
@@ -21,6 +29,9 @@
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/models/book.js"></script>
+    <script src="scripts/views/book-view.js"></script>
+    <script>bookView.initIndex();</script>
   </body>
 </html>

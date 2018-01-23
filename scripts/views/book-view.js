@@ -15,3 +15,7 @@ bookView.initAddBook = () => {
     book.addBook();
   });
 }
+
+bookView.initIndex = () => {
+  Book.books.forEach(book => $('.booklist').append(book.toHtml()));
+}
