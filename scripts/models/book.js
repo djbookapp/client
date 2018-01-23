@@ -37,9 +37,14 @@ Book.prototype.loadBooks(rows) = function() {
   */
 
 Book.prototype.fetchBooks = callback => {
-  $.get('request to API')
-  .then(results => {
-    Books.loadBooks(results);
-    callback();
+  $.ajax ({ 
+     url:`${__API_URL__}/api/v1/books`,
+     method: 'GET',
+     error: errorView.errorCallback,
   })
+    .then(data => {
+      Books.loadBooks(data);
+    })
+    .then(callback);
 };
+
