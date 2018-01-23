@@ -15,11 +15,11 @@ var numbook = function(){
   return this.books.length;
 }
 
-Book.prototype.toHtml() = function() {
+Book.prototype.toHtml = () => {
   return Handlebars.compile($('#book-list-template').text()); 
 }
 
-Book.prototype.loadBooks(rows) = function() {
+Book.prototype.loadBooks = rows => {
   rows.sort((a,b) => a.title - b.title); 
   Book.books = rows.map(book => new Book(book));
 }

@@ -5,10 +5,13 @@ var bookView = {};
 bookView.initAddBook = () => {
   $('#add-book').on('submit', e => {
     e.preventDefault();
-    let book = new Book($('#book-author').val(),$('#book-title').val(),$('#book-isbn').val(),$('#book-img-url').val(),$('#book-description').val());
+    let book = new Book({
+      author: $('#book-author').val(),
+      title: $('#book-title').val(),
+      isbn: $('#book-isbn').val(),
+      imgUrl: $('#book-img-url').val(),
+      description: $('#book-description').val()
+    });
     book.addBook();
   });
 }
-
-
-
