@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <script id="book-list-template" type="text/x-handlebars-template">
-      <div>
-        <img src="{{imgurl}}"/>
-        <div> 
-          <p>{{title}}</p>
-          <p>{{author}}</p>
-        </div>
-      </div>
+      <p>{{title}}</p>
+      <p>{{author}}</p>
+      <p>{{isbn}}</p>
+      <p>{{description}}</p>
+      <img src="{{imgurl}}"/> 
     </script>
+
   </head>
   <body>
     <main>
@@ -33,6 +32,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-view.js"></script>
-    <script>Book.prototype.fetchBooks(bookView.initIndex);</script>
+    <script>bookView.initIndex();</script>
   </body>
 </html>
