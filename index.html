@@ -16,23 +16,59 @@
         </div>
       </div>
     </script>
+    <script id="error-template" type="text/x-handlebars-template">
+      <p>Error: {{status}} - {{statusText}}</p>
+    </script>
   </head>
   <body>
+    <header>
+      <h1>books app</h1>
+    </header>
     <main>
       
-      <section class="booklist">
-        <p>Number of books</p>
-        <p>List of books and authors</p>
-      </script>
+      <section class="book-view container" id="booklist">
+        <p>my books</p>
+        <p></p>
+      </section>
 
-      <section class="about"></section>
-
+      <section class="about-view container"></section>
+      <section class="error-view container" id="error-message"></section>
+      <section class="addbook-view container">
+        <form id="add-book">
+          <fieldset>
+            <label for="book-author">Author:</label>
+            <input id="book-author" type="text">
+          </fieldset>
+          <fieldset>
+            <label for="book-title">Title:</label>
+            <input id="book-title" type="text">
+          </fieldset>
+          <fieldset>
+            <label for="book-isbn">ISBN:</label>
+            <input id="book-isbn" type="text">
+          </fieldset>
+          <fieldset>
+            <label for="book-img-url">Image URL:</label>
+            <input id="book-img-url" type="text">
+          </fieldset>
+          <fieldset>
+            <label for="book-description">Description:</label>
+            <textarea id="book-description"></textarea>
+          </fieldset>
+          <button type="submit">Add Book</button>
+        </form>
+      </section>
+ 
     </main>
-
+    <footer>
+      <a class="icon-github"></a>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="scripts/views/error-view.js"></script>
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-view.js"></script>
-    <script>Book.prototype.fetchBooks(bookView.initIndex);</script>
+    <script src="scripts/views/addbook-view.js"></script>
+    <script>$(document).ready(app.Book.prototype.fetchBooks(app.bookView.initIndex));</script>
   </body>
 </html>

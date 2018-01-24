@@ -1,30 +1,40 @@
-.booklist-item {
-  margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  position: relative;
+#booklist>p:first-child {
+  font-family: sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: thin;
 }
 
-.booklist-item>img {}
+.booklist-item {
+  margin: 30px auto;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+}
+
+.booklist-item>img {
+  width: 100%;
+  height: 70vw;
+}
 
 .booklist-item>div {
   position: absolute;
   width: 100%;
-  height: 40%;
+  height: 30%;
   bottom: 0;
   background-color: #444;
 }
 
 .booklist-item>div>p:first-child {
-  padding: 10px;
+  margin: 20px;
   font-size: 20px;
-  font-weight: bold;
   color: #aaa;
+  text-decoration: none;
 }
 
 .booklist-item>div>p:last-child {
-  padding: 10px;
-  font-size: 16px;
+  margin: 20px;
+  font-size: 18px;
   font-style: italic;
   color: #aaa;
 }
