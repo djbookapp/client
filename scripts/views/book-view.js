@@ -6,6 +6,7 @@ var app = app || {};
 
   bookView.initIndex = () => {
     $('.container').hide();
+    $('.book-view').empty();
     $('.book-view').show();
     Book.books.forEach(book => $('#booklist').append(book.toHtml()));
   }
