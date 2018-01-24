@@ -21,4 +21,5 @@ var app = app || {};
   }
 
   module.addBookView = addBookView;
+
 })(app, app.Book)

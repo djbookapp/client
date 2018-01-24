@@ -5,42 +5,41 @@ const __API_URL__ = 'https://djbookapp.herokuapp.com';
 var app = app || {};
 
 (function(module) {
-Book.books = [];
-function Book(bookObj) {
-  Object.keys(bookObj).forEach(key => this[key] = bookObj[key]);
-}
+  Book.books = [];
+  function Book(bookObj) {
+    Object.keys(bookObj).forEach(key => this[key] = bookObj[key]);
+  }
 
-Book.prototype.addBook = function() {
-  $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description});
-}
+  Book.prototype.addBook = function() {
+    $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description});
+  }
 
-var numbook = function(){
-  return this.books.length;
-}
+  var numbook = function(){
+    return this.books.length;
+  }
 
-Book.prototype.toHtml = function() {
-  var template = Handlebars.compile($('#book-list-template').text()); 
-  
-  return template(this);
-}
+  Book.prototype.toHtml = function() {
+    var template = Handlebars.compile($('#book-list-template').text()); 
+    return template(this);
+  }
 
-Book.prototype.loadBooks = rows => {
-  rows.sort((a,b) => a.title - b.title); 
-  Book.books = rows.map(book => new Book(book));
-}
+  Book.prototype.loadBooks = rows => {
+    rows.sort((a,b) => a.title - b.title); 
+    Book.books = rows.map(book => new Book(book));
+  }
 
-Book.prototype.fetchBooks = callback => {
-  $.ajax ({ 
-     url:`${__API_URL__}/api/v1/books`,
-     method: 'GET',
-     error: app.errorCallback,
-  })
-  .then(data => {
-     Book.prototype.loadBooks(data);
-  })
- .then(callback);
-}
+  Book.prototype.fetchBooks = callback => {
+    $.ajax ({ 
+       url:`${__API_URL__}/api/v1/books`,
+       method: 'GET',
+       error: app.errorCallback,
+    })
+    .then(data => {
+       Book.prototype.loadBooks(data);
+    })
+   .then(callback);
+  }
 
-module.Book = Book;
+  module.Book = Book;
 
 })(app);
