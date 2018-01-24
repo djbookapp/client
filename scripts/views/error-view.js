@@ -19,4 +19,5 @@ var app = app || {};
   }
 
   module.errorCallback = errorView.errorCallback;
+
 })(app)
