@@ -5,9 +5,10 @@ var app = app || {};
   var bookView = {};
 
   bookView.initIndex = () => {
-    $('.container').hide();
+    $('.container').addClass('hidden');
     $('.book-view').empty();
-    $('.book-view').show();
+    $('.book-view').html('<p>my books</p>');
+    $('.book-view').removeClass('hidden');
     Book.books.forEach(book => $('#booklist').append(book.toHtml()));
   }
 
