@@ -13,7 +13,7 @@ Book.prototype.addBook = function() {
 
 var numbook = function(){
   return this.books.length;
-}
+} 
 
 Book.prototype.toHtml = function() {
   var template = Handlebars.compile($('#book-list-template').text()); 

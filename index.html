@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <script id="book-list-template" type="text/x-handlebars-template">
-      <p>{{title}}</p>
-      <p>{{author}}</p>
-      <p>{{isbn}}</p>
-      <p>{{description}}</p>
-      <img src="{{imgurl}}"/> 
+      <div class="booklist-item">
+        <img src="{{imgurl}}"/>
+        <div> 
+          <p>{{title}}</p>
+          <p>{{author}}</p>
+        </div>
+      </div>
     </script>
 
   </head>
