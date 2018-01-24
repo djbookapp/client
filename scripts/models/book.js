@@ -2,6 +2,9 @@
 const __API_URL__ = 'https://djbookapp.herokuapp.com';
 //const __API_URL__ = 'http://localhost:3000';
 
+var app = app || {};
+
+(function(module) {
 Book.books = [];
 function Book(bookObj) {
   Object.keys(bookObj).forEach(key => this[key] = bookObj[key]);
@@ -35,5 +38,9 @@ Book.prototype.fetchBooks = callback => {
   .then(data => {
      Book.prototype.loadBooks(data);
   })
-  .then(callback);
+ .then(callback);
 }
+
+module.Book = Book;
+
+})(app);
