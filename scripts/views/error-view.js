@@ -7,10 +7,10 @@ var app = app || {};
 
   errorView.initErrorPage = err => {
     var template = Handlebars.compile($('#error-template').text());
-    $('.container').hide();
+    $('.container').addClass('hidden');
     $('#error-message').empty();
     $('#error-message').append(template(err));
-    $('.error-view').show();
+    $('.error-view').removeClass('hidden');
   }
 
   errorView.errorCallback = err => {
