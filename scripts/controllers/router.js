@@ -1,8 +1,8 @@
 'use strict';
 var app = app || {};
 
-page('/', app.bookView.initIndex);
+page('/client', app.bookView.initIndex);
 page('/books/new', app.addBookView.initAddBook);
 page('/books/:id', app.Book.prototype.fetchOne, app.detailView.init);
-page('*', () => page.redirect('/'));
+page('*', () => page.redirect('/client'));
 page();
