@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <script id="book-list-template" type="text/x-handlebars-template">
-      <div class="booklist-item">
-        <img src="{{imgurl}}"/>
-        <div> 
-          <p>{{title}}</p>
-          <p>{{author}}</p>
-        </div>
+      <div class="booklist-item" data-book_id="{{book_id}}">
+          <img src="{{imgurl}}"/>
+          <div> 
+            <p>{{title}}</p>
+            <p>{{author}}</p>
+          </div>
       </div>
     </script>
     <script id="error-template" type="text/x-handlebars-template">
@@ -25,14 +25,10 @@
       <h1>books app</h1>
     </header>
     <main>
-      
-      <section class="book-view container hidden" id="booklist">
-        <p>my books</p>
-        <p></p>
-      </section>
-
-      <section class="about-view container hidden"></section>
+      <section class="book-view container hidden" id="booklist"></section>
+      <section class="detail-view container hidden"></section>
       <section class="error-view container hidden" id="error-message"></section>
+      <section class="about-view container hidden"></section>
       <section class="addbook-view container hidden">
         <form id="add-book">
           <fieldset>
@@ -64,11 +60,14 @@
       <a class="icon-github"></a>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/views/error-view.js"></script>
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/addbook-view.js"></script>
+    <script src="scripts/views/detail-view.js"></script>
+    <script src="scripts/controllers/router.js"></script>
     <script>$(document).ready(app.Book.prototype.fetchBooks(app.bookView.initIndex));</script>
   </body>
 </html>
