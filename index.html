@@ -32,11 +32,11 @@
 
     <script id="update-template" type="text/x-handlebars-template">
       <form id="update-book">
-        <input id="book-author" type="text" placeholder="{{author}}">
-        <input id="book-title" type="text" placeholder="{{title}}">
-        <input id="book-isbn" type="text" placeholder="isbn {{isbn}}">
-        <input id="book-img-url" type="text" placeholder="{{imgurl}}">
-        <textarea id="book-description" placeholder="{{description}}"></textarea>
+        <input id="book-author" type="text" placeholder="{{author}}" required>
+        <input id="book-title" type="text" placeholder="{{title}}" required>
+        <input id="book-isbn" type="text" placeholder="isbn {{isbn}}" required>
+        <input id="book-img-url" type="text" placeholder="{{imgurl}}" required>
+        <textarea id="book-description" placeholder="{{description}}" required></textarea>
         <button id="updatebookbutton">update</button>
       </form>
     </script>
@@ -60,11 +60,11 @@
       <section class="addbook-view container hidden">
         <p>add a new book</p>
         <form id="add-book">
-          <input id="book-author" type="text" placeholder="author">
-          <input id="book-title" type="text" placeholder="title">
-          <input id="book-isbn" type="text" placeholder="isbn">
-          <input id="book-img-url" type="text" placeholder="image url">
-          <textarea id="book-description" placeholder="description"></textarea>
+          <input id="book-author" type="text" placeholder="author" required>
+          <input id="book-title" type="text" placeholder="title" required>
+          <input id="book-isbn" type="text" placeholder="isbn" required>
+          <input id="book-img-url" type="text" placeholder="image url" required>
+          <textarea id="book-description" placeholder="description" required></textarea>
           <button type="submit">submit</button>
         </form>
       </section> 
