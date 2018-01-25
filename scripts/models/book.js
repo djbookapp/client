@@ -31,7 +31,12 @@ var app = app || {};
   }
 
   Book.prototype.destroy = function() {
-    $.delete(`${__API_URL__}/api/db/${this.id}`);
+    console.log(this);
+    $.ajax({
+      url: `${__API_URL__}/api/db/${this.book_id}`,
+      headers: {"Access-Control-Allow-Origin": "*"},
+      method: 'DELETE',
+    });
   }
 
   Book.prototype.toHtml = function() {

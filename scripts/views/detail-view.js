@@ -5,7 +5,6 @@ var app = app || {};
   var detailView = {};
 
   detailView.init = (ctx,next) => {
-    console.log(ctx.book);
     var template = Handlebars.compile($('#detail-template').text());
     $('.container').addClass('hidden');
     $('.detail-view').empty();
@@ -17,8 +16,9 @@ var app = app || {};
     })
     
     $('#deletebutton').on('click', () => {
+        var book = new app.Book(ctx.book[0]);
         book.destroy();
-        page.show('/client');
+//        page.show('/client');
     });
   }
 
