@@ -11,9 +11,13 @@ var app = app || {};
   }
 
   Book.prototype.addBook = function() {
-    $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description});
-    $('.addbook-view input').val('');
-    $('.addbook-view textarea').val('');
+    $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description})
+      .then(this.fetchBooks(() => {
+        $('.addbook-view input').val('');
+        $('.addbook-view textarea').val('');
+      }
+    ));
+
   }
 
   Book.prototype.toHtml = function() {
