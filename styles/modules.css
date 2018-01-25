@@ -31,11 +31,29 @@
   text-decoration: none;
 }
 
-.booklist-item>div>p:last-child {
+.booklist-item>div>p:nth-child(2) {
   margin: 20px;
   font-size: 18px;
   font-style: italic;
   color: #aaa;
+}
+
+.booklist-item>div>div {
+  cursor: pointer;
+  position: relative;
+  bottom: -20px;
+  float: right;
+  width: 150px;
+  height: 20px;
+  padding: 15px;
+  padding-top: 16px;
+  border-radius: 5px;
+  background: #ccc;
+  color: #444;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: 20px;
 }
 
 .hidden {
