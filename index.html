@@ -26,18 +26,18 @@
       <p>{{author}} <span>isbn: {{isbn}}</span></p>
       <img src="{{imgurl}}">
       <p>{{description}}</p>
-      <div id="updatebutton">update</div>
-      <div id="deletebutton">delete</div>
+      <button id="deletebutton">delete</button>
+      <button id="updatebutton">update</button>
     </script>
 
     <script id="update-template" type="text/x-handlebars-template">
-      <form id="update-view">
+      <form id="update-book">
         <input id="book-author" type="text" placeholder="{{author}}">
         <input id="book-title" type="text" placeholder="{{title}}">
         <input id="book-isbn" type="text" placeholder="isbn {{isbn}}">
         <input id="book-img-url" type="text" placeholder="{{imgurl}}">
         <textarea id="book-description" placeholder="{{description}}"></textarea>
-        <button type="submit">update</button>
+        <button id="updatebookbutton" type="submit">update</button>
       </form>
     </script>
 
