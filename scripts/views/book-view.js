@@ -12,7 +12,8 @@ var app = app || {};
     Book.books.forEach(book => $('#booklist').append(book.toHtml()));
 
     $('.booklist-item').on('click', function() {
-      page.show(`/books/${$(this).data('book_id')}`);
+      page.show('/books/'+$(this).data('book_id'));
+      //page.show(`/books/${$(this).data('book_id')}`);
     });
 
   }
