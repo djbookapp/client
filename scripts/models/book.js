@@ -42,13 +42,13 @@ var app = app || {};
    .then(callback);
   }
 
-  Book.prototype.fetchOne = (ctx,next) => {
+  Book.prototype.fetchOne = function (ctx,next) {
     $.ajax ({
-      url: `${__API_URL__}/api/v1/books/${ctx.id}`,
+      url: `${__API_URL__}/api/v1/books/${ctx.params.id}`,
       method: 'GET',
       headers: {'Access-Control-Allow-Origin': '*'},
       error: app.errorCallback,
-    }, data=>{console.log(data + ' ' + ctx.id);ctx.book=data;});
+    }, data=>{console.log(data + ' ' + ctx.params.id);ctx.book=data;});
     next();
   }
 
