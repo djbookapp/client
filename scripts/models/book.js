@@ -42,10 +42,10 @@ var app = app || {};
 
   Book.prototype.fetchOne = (ctx,next) => {
     $.ajax ({
-      url: `${__API_URL__}/api/v1/books/ctx.id`,
+      url: `${__API_URL__}/api/v1/books/${ctx.id}`,
       method: 'GET',
       error: app.errorCallback,
-    }, data=>ctx.book=data);
+    }, data=>{console.log(data);ctx.book=data;});
     next();
   }
 
