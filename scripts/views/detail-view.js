@@ -12,7 +12,7 @@ var app = app || {};
     $('.detail-view').removeClass('hidden');
 
     $('#updatebutton').on('click', () => {
-      page.show(`/books/update/${ctx.book[0].id}`);
+      page.show(`/books/update/${ctx.book[0].book_id}`);
     })
     
     $('#deletebutton').on('click', () => {
