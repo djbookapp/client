@@ -21,7 +21,13 @@ var app = app || {};
   }
 
   Book.prototype.update = function() {
-    $.put(`${__API_URL__}/api/db/${this.id}`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description});
+    $.ajax({
+      url: `${__API_URL__}/api/db/${this.book_id}`,
+      method: 'PUT',
+      contentType: 'application/json',
+      data: {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description},
+    })
+    .then(console.log(this.book_id));
   }
 
   Book.prototype.destroy = function() {
