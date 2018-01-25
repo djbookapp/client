@@ -60,14 +60,14 @@
   display: none;
 }
 
-.addbook-view, .update-view > p {
+.addbook-view > p {
   position: relative;
   left: -10px;
   font-size: 24px;
   text-decoration: underline;
 }
 
-#add-book, #update-book input {
+#add-book input, #update-book input {
   position: relative;
   left: -10px;
   border: 2px solid #222;
@@ -81,7 +81,7 @@
   margin: 30px auto;
 }
 
-#add-book, #update-book textarea {
+#add-book textarea, #update-book textarea {
   position: relative;
   left: -10px;
   border: 2px solid #222;
@@ -96,7 +96,7 @@
   font-family: sans-serif;
 }
 
-#add-book, #update-book, .detail-view button {
+#add-book button, .detail-view button, #update-book button {
   position: relative;
   right: -10px;
   margin-left: 20px;
