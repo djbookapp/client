@@ -20,54 +20,47 @@
       <p>Error: {{status}} - {{statusText}}</p>
     </script>
   </head>
+
   <body>
     <header>
       <h1>books app</h1>
+      <i class="icon-menu"></i>
+      <p class="menu-item hidden" id="allbooks">Show All Books</p>
+      <p class="menu-item hidden" id="addbook">Add A New Book</p>
     </header>
+
     <main>
       <section class="book-view container hidden" id="booklist"></section>
       <section class="detail-view container hidden"></section>
       <section class="error-view container hidden" id="error-message"></section>
       <section class="about-view container hidden"></section>
       <section class="addbook-view container hidden">
+        <p>add a new book</p>
         <form id="add-book">
-          <fieldset>
-            <label for="book-author">Author:</label>
-            <input id="book-author" type="text">
-          </fieldset>
-          <fieldset>
-            <label for="book-title">Title:</label>
-            <input id="book-title" type="text">
-          </fieldset>
-          <fieldset>
-            <label for="book-isbn">ISBN:</label>
-            <input id="book-isbn" type="text">
-          </fieldset>
-          <fieldset>
-            <label for="book-img-url">Image URL:</label>
-            <input id="book-img-url" type="text">
-          </fieldset>
-          <fieldset>
-            <label for="book-description">Description:</label>
-            <textarea id="book-description"></textarea>
-          </fieldset>
-          <button type="submit">Add Book</button>
+          <input id="book-author" type="text" placeholder="author">
+          <input id="book-title" type="text" placeholder="title">
+          <input id="book-isbn" type="text" placeholder="isbn">
+          <input id="book-img-url" type="text" placeholder="image url">
+          <textarea id="book-description" placeholder="description"></textarea>
+          <button type="submit">submit</button>
         </form>
-      </section>
- 
+      </section> 
     </main>
+
     <footer>
       <a class="icon-github"></a>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/views/error-view.js"></script>
     <script src="scripts/models/book.js"></script>
+    <script src="scripts/views/nav-view.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/addbook-view.js"></script>
     <script src="scripts/views/detail-view.js"></script>
     <script src="scripts/controllers/router.js"></script>
-    <script>$(document).ready(app.Book.prototype.fetchBooks(app.bookView.initIndex));</script>
+    <script>$(document).ready(app.navView.init, app.Book.prototype.fetchBooks(app.bookView.initIndex));</script>
   </body>
 </html>

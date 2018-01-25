@@ -14,6 +14,7 @@ var app = app || {};
     $('.booklist-item').on('click', function() {
       page.show(`/books/${$(this).data('book_id')}`);
     });
+
   }
 
   module.bookView = bookView;

@@ -1,7 +1,7 @@
 'use strict';
 const __API_URL__ = 'https://djbookapp.herokuapp.com';
 //const __API_URL__ = 'http://localhost:3737';
-const __CLIENT_URL__ = 'http://localhost:3000';
+
 var app = app || {};
 
 (function(module) {
@@ -45,7 +45,7 @@ var app = app || {};
       url: `${__API_URL__}/api/v1/books/${ctx.id}`,
       method: 'GET',
       error: app.errorCallback,
-    }, data=>{console.log(data);ctx.book=data;});
+    }, data=>{console.log(data + ' ' + ctx.id);ctx.book=data;});
     next();
   }
 
