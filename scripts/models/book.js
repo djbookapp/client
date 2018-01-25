@@ -23,11 +23,12 @@ var app = app || {};
   Book.prototype.update = function() {
     $.ajax({
       url: `${__API_URL__}/api/db/${this.book_id}`,
-      method: 'POST',
+      method: 'PUT',
       headers: {"X-HTTP-Method-Override": "PUT"},
       contentType: 'application/json',
-      data: {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description},
-    })
+      data: JSON.stringify({author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description}),
+    }, () => console.log('made put request'));
+//    .then(page.show(`/books/${this.book_id}`));
   }
 
   Book.prototype.destroy = function() {

@@ -4,11 +4,9 @@ var app = app || {};
 (function(module) {
     var updateView = {};
     updateView.init = (ctx,next) => {
-        var book = {};
+        var book;
         app.Book.books.forEach(el => {
-            if (el.id === ctx.id) {
-                book = el;
-            }
+            if (el.book_id == ctx.params.id) book = el;
         });
 
         var template = Handlebars.compile($('#update-template').text());
@@ -17,14 +15,15 @@ var app = app || {};
         $('.update-view').removeClass('hidden');
         $('.update-view').append(template(book));
 
-        $('#updatebookbutton').on('click', () => {
+        $('#updatebookbutton').on('click', e => {
+          e.preventDefault();
           book.author = $('#book-author').val();
           book.title = $('#book-title').val();
           book.isbn = $('#book-isbn').val();
           book.imgUrl = $('#book-img-url').val();
           book.description = $('#book-description').val();
+          console.log(book);
           book.update();
-          page.show(`/books/${book.id}`);
         });
 
     }
