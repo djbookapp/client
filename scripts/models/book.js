@@ -12,10 +12,8 @@ var app = app || {};
 
   Book.prototype.addBook = function() {
     $.post(`${__API_URL__}/api/db`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description});
-  }
-
-  var numbook = function(){
-    return this.books.length;
+    $('.addbook-view input').val('');
+    $('.addbook-view textarea').val('');
   }
 
   Book.prototype.toHtml = function() {

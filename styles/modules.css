@@ -1,8 +1,7 @@
 #booklist>p:first-child {
   font-family: sans-serif;
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: thin;
+  font-size: 24px;
+  text-decoration: underline;
 }
 
 .booklist-item {
