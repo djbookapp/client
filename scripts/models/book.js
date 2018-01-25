@@ -46,10 +46,12 @@ var app = app || {};
     $.ajax ({
       url: `${__API_URL__}/api/v1/books/${ctx.params.id}`,
       method: 'GET',
-      headers: {'Access-Control-Allow-Origin': '*'},
       error: app.errorCallback,
-    }, data=>{console.log(data + ' ' + ctx.params.id);ctx.book=data;});
-    next();
+    })
+    .then(data => {
+      ctx.book=data;
+      next();
+    })
   }
 
   module.Book = Book;
