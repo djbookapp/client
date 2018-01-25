@@ -11,7 +11,6 @@ var app = app || {};
     $('.detail-view').empty();
     $('.detail-view').append(template(ctx.book[0]));
     $('.detail-view').removeClass('hidden');
-    next();
   }
 
   module.detailView = detailView;
