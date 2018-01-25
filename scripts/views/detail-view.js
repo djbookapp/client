@@ -15,6 +15,11 @@ var app = app || {};
     $('#updatebutton').on('click', () => {
       page.show(`/books/update/${ctx.book[0].id}`);
     })
+    
+    $('#deletebutton').on('click', () => {
+        book.destroy();
+        page.show('/client');
+    });
   }
 
   module.detailView = detailView;

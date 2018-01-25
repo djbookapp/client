@@ -20,6 +20,14 @@ var app = app || {};
 
   }
 
+  Book.prototype.update = function() {
+    $.put(`${__API_URL__}/api/db/${this.id}`, {author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description});
+  }
+
+  Book.prototype.destroy = function() {
+    $.delete(`${__API_URL__}/api/db/${this.id}`);
+  }
+
   Book.prototype.toHtml = function() {
     var template = Handlebars.compile($('#book-list-template').text()); 
     return template(this);
