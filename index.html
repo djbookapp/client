@@ -20,12 +20,27 @@
     <script id="error-template" type="text/x-handlebars-template">
       <p>Error: {{status}} - {{statusText}}</p>
     </script>
+
     <script id="detail-template" type="text/x-handlebars-template">
       <p>{{title}}</p>
       <p>{{author}} <span>isbn: {{isbn}}</span></p>
       <img src="{{imgurl}}">
       <p>{{description}}</p>
+      <div id="updatebutton">update</div>
+      <div id="deletebutton">delete</div>
     </script>
+
+    <script id="update-template" type="text/x-handlebars-template">
+      <form id="update-view">
+        <input id="book-author" type="text" placeholder="{{author}}">
+        <input id="book-title" type="text" placeholder="{{title}}">
+        <input id="book-isbn" type="text" placeholder="isbn {{isbn}}">
+        <input id="book-img-url" type="text" placeholder="{{imgurl}}">
+        <textarea id="book-description" placeholder="{{description}}"></textarea>
+        <button type="submit">update</button>
+      </form>
+    </script>
+
   </head>
 
   <body>
@@ -39,6 +54,7 @@
     <main>
       <section class="book-view container hidden" id="booklist"></section>
       <section class="detail-view container hidden"></section>
+      <section class="update-view container hidden"></section>
       <section class="error-view container hidden" id="error-message"></section>
       <section class="about-view container hidden"></section>
       <section class="addbook-view container hidden">
