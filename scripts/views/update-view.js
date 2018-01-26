@@ -22,8 +22,7 @@ var app = app || {};
           book.isbn = $('#book-isbn').val();
           book.imgUrl = $('#book-img-url').val();
           book.description = $('#book-description').val();
-          console.log(book);
-          book.update();
+          book.update(book.fetchBooks(app.bookView.initIndex));
         });
 
     }
