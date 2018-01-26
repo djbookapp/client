@@ -27,17 +27,16 @@ var app = app || {};
       headers: {"X-HTTP-Method-Override": "PUT"},
       contentType: 'application/json',
       data: JSON.stringify({author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description}),
-    }, () => console.log('made put request'));
-//    .then(page.show(`/books/${this.book_id}`));
+    }, () => page.show(`/books/${this.book_id}`));
   }
 
   Book.prototype.destroy = function() {
     console.log(this);
     $.ajax({
       url: `${__API_URL__}/api/db/${this.book_id}`,
-      headers: {"Access-Control-Allow-Origin": "*"},
       method: 'DELETE',
-    });
+      headers: {"X-HTTP-Method-Override": "DELETE"},
+    }, () => page.show(`/client`));
   }
 
   Book.prototype.toHtml = function() {
