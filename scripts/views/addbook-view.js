@@ -10,11 +10,11 @@ var app = app || {};
     $('#add-book').on('submit', e => {
       e.preventDefault();
       let book = new Book({
-        author: $('#book-author').val(),
-        title: $('#book-title').val(),
-        isbn: $('#book-isbn').val(),
-        imgUrl: $('#book-img-url').val(),
-        description: $('#book-description').val()
+        author: $('#ab-book-author').val(),
+        title: $('#ab-book-title').val(),
+        isbn: $('#ab-book-isbn').val(),
+        imgUrl: $('#ab-book-img-url').val(),
+        description: $('#ab-book-description').val()
       });
       book.addBook();
     });
