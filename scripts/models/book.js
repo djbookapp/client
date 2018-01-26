@@ -20,23 +20,25 @@ var app = app || {};
 
   }
 
-  Book.prototype.update = function() {
+  Book.prototype.update = function(callback) {
     $.ajax({
       url: `${__API_URL__}/api/db/${this.book_id}`,
       method: 'PUT',
       headers: {"X-HTTP-Method-Override": "PUT"},
       contentType: 'application/json',
       data: JSON.stringify({author: this.author, title: this.title, isbn: this.isbn, imgUrl: this.imgUrl, description: this.description}),
-    }, () => page.show(`/books/${this.book_id}`));
+      error: callback,
+    }, () => callback);
   }
 
-  Book.prototype.destroy = function() {
+  Book.prototype.destroy = function(callback) {
     console.log(this);
     $.ajax({
       url: `${__API_URL__}/api/db/${this.book_id}`,
       method: 'DELETE',
       headers: {"X-HTTP-Method-Override": "DELETE"},
-    }, () => page.show(`/client`));
+      error: callback,
+    }, () => callback);
   }
 
   Book.prototype.toHtml = function() {

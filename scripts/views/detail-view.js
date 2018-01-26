@@ -17,8 +17,7 @@ var app = app || {};
     
     $('#deletebutton').on('click', () => {
         var book = new app.Book(ctx.book[0]);
-        book.destroy();
-//        page.show('/client');
+        book.destroy(book.fetchBooks(app.bookView.init));
     });
   }
 
